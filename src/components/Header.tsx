@@ -38,7 +38,7 @@ const Header: React.FC = () => {
       height: 0,
       transition: {
         duration: 0.3,
-        ease: "easeInOut"
+        ease: "easeInOut" as const
       }
     },
     visible: { 
@@ -46,7 +46,7 @@ const Header: React.FC = () => {
       height: "auto",
       transition: {
         duration: 0.3,
-        ease: "easeInOut",
+        ease: "easeInOut" as const,
         staggerChildren: 0.1,
         delayChildren: 0.1
       }
@@ -81,7 +81,7 @@ const Header: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Alex Rivera
+            Satyam Chaturvedi
           </motion.div>
 
           {/* Desktop Navigation */}

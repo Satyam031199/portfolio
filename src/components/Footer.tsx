@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: "easeOut" }
+      transition: { duration: 0.5, ease: "easeOut" as const }
     }
   };
 
@@ -76,18 +76,6 @@ const Footer: React.FC = () => {
           >
             © {currentYear} {personalInfo.name}. All rights reserved.
           </motion.p>
-
-          <motion.div 
-            className="mt-6 pt-6 border-t border-gray-800"
-            variants={itemVariants}
-          >
-            <motion.p 
-              className="text-sm text-gray-500"
-              variants={itemVariants}
-            >
-              This portfolio is built with React, TypeScript, and Tailwind CSS
-            </motion.p>
-          </motion.div>
         </motion.div>
       </div>
     </footer>

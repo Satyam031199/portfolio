@@ -20,7 +20,7 @@ const About: React.FC = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.6, ease: "easeOut" as const }
     }
   };
 
@@ -29,7 +29,7 @@ const About: React.FC = () => {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.5, ease: "easeOut" }
+      transition: { duration: 0.5, ease: "easeOut" as const }
     }
   };
 
@@ -103,7 +103,7 @@ const About: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.5 }}
               >
-                5+
+                3+
               </motion.h3>
               <p className="text-gray-600 dark:text-gray-400 font-medium">Years Experience</p>
             </motion.div>
@@ -123,7 +123,7 @@ const About: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.7 }}
               >
-                50+
+                20+
               </motion.h3>
               <p className="text-gray-600 dark:text-gray-400 font-medium">Projects Completed</p>
             </motion.div>
@@ -143,7 +143,7 @@ const About: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.9 }}
               >
-                100K+
+                20K+
               </motion.h3>
               <p className="text-gray-600 dark:text-gray-400 font-medium">Users Impacted</p>
             </motion.div>

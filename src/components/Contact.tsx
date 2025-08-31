@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Award } from 'lucide-react';
-import { personalInfo, education, certifications } from '../data/portfolio';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { personalInfo } from '../data/portfolio';
 import { ContactForm } from '../types';
 
 const Contact: React.FC = () => {
@@ -58,7 +58,7 @@ const Contact: React.FC = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.6, ease: "easeOut" as const }
     }
   };
 
@@ -67,7 +67,7 @@ const Contact: React.FC = () => {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.6, ease: "easeOut" as const}
     }
   };
 
@@ -251,7 +251,7 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400"
+                    className="input"
                     placeholder="John Doe"
                     whileFocus={{ scale: 1.02 }}
                   />
@@ -267,7 +267,7 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400"
+                    className="input"
                     placeholder="john@example.com"
                     whileFocus={{ scale: 1.02 }}
                   />
@@ -285,7 +285,7 @@ const Contact: React.FC = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400"
+                  className="input"
                   placeholder="Let's discuss a project"
                   whileFocus={{ scale: 1.02 }}
                 />
@@ -302,7 +302,7 @@ const Contact: React.FC = () => {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400 resize-none"
+                  className="input resize-none"
                   placeholder="Tell me about your project..."
                   whileFocus={{ scale: 1.02 }}
                 />
@@ -363,73 +363,6 @@ const Contact: React.FC = () => {
             </motion.form>
           </motion.div>
         </div>
-
-        {/* Education & Certifications */}
-        <motion.div 
-          className="grid md:grid-cols-2 gap-12 mt-20"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={containerVariants}
-        >
-          {/* Education */}
-          <motion.div variants={itemVariants}>
-            <motion.h3 
-              className="text-3xl font-bold mb-8"
-              variants={itemVariants}
-            >
-              Education
-            </motion.h3>
-            {education.map((edu, index) => (
-              <motion.div
-                key={index}
-                className="bg-gray-800 p-6 rounded-xl"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ 
-                  backgroundColor: "#374151",
-                  scale: 1.02
-                }}
-              >
-                <h4 className="text-xl font-bold mb-2">{edu.degree}</h4>
-                <p className="text-teal-400 font-medium mb-2">{edu.school}</p>
-                <p className="text-gray-400 mb-2">{edu.year}</p>
-                <p className="text-gray-300">{edu.details}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Certifications */}
-          <motion.div variants={itemVariants}>
-            <motion.h3 
-              className="text-3xl font-bold mb-8 flex items-center gap-2"
-              variants={itemVariants}
-            >
-              <Award className="w-8 h-8 text-teal-400" />
-              Certifications
-            </motion.h3>
-            <div className="space-y-4">
-              {certifications.map((cert, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-gray-800 p-4 rounded-lg border-l-4 border-teal-400"
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ 
-                    backgroundColor: "#374151",
-                    x: 5
-                  }}
-                >
-                  <p className="font-medium">{cert}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );

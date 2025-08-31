@@ -1,24 +1,24 @@
 import { Project, Experience, Skill } from '../types';
 
 export const personalInfo = {
-  name: "Alex Rivera",
+  name: "Satyam Chaturvedi",
   role: "Full Stack Developer",
   tagline: "Building digital experiences that make a difference",
-  email: "alex@alexrivera.dev",
-  phone: "+1 (555) 123-4567",
-  location: "San Francisco, CA",
-  avatar: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400",
+  email: "satyamchaturvedi71@gmail.com",
+  phone: "+91 6393014394",
+  location: "Noida, India",
+  avatar: "/avatar.jpeg",
   resumeUrl: "/resume.pdf",
   social: {
-    linkedin: "https://linkedin.com/in/alexrivera",
-    github: "https://github.com/alexrivera",
-    twitter: "https://twitter.com/alexrivera"
+    linkedin: "linkedin.com/in/satyam-chaturvedi-031199",
+    github: "linkedin.com/in/satyam-chaturvedi-031199",
+    twitter: ""
   }
 };
 
-export const aboutMe = `I'm a passionate full-stack developer with 5+ years of experience creating innovative web applications. I specialize in React, Node.js, and modern JavaScript frameworks, with a strong focus on user experience and performance optimization.
+export const aboutMe = `I'm a passionate full-stack developer with 3+ years of experience creating innovative web applications. I specialize in React, Node.js, and modern JavaScript frameworks, with a strong focus on user experience and performance optimization.
 
-My journey in tech started with a Computer Science degree from UC Berkeley, and I've since worked with startups and established companies to build scalable solutions that impact thousands of users daily. I'm particularly excited about the intersection of AI and web development, constantly exploring new ways to enhance user experiences through intelligent applications.
+My journey in tech started with Electrical and Electronics degree from VIT Vellore, and I've since worked with startups and established companies to build scalable solutions that impact thousands of users daily. I'm particularly excited about the intersection of AI and web development, constantly exploring new ways to enhance user experiences through intelligent applications.
 
 When I'm not coding, you'll find me contributing to open-source projects, mentoring junior developers, or exploring the beautiful hiking trails around the Bay Area.`;
 
@@ -29,15 +29,15 @@ export const skills: Skill[] = [
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "Python", "FastAPI", "PostgreSQL", "MongoDB", "Redis"]
+    items: ["NextJs","Node.js", "Express", "PostgreSQL", "MongoDB", "Redis"]
   },
   {
     category: "Cloud & DevOps",
-    items: ["AWS", "Docker", "Kubernetes", "CI/CD", "Terraform", "Vercel", "Netlify"]
+    items: ["AWS", "Docker", "Kubernetes", "CI/CD", "Terraform"]
   },
   {
     category: "Tools & Other",
-    items: ["Git", "VS Code", "Figma", "Jest", "Cypress", "GraphQL", "REST APIs"]
+    items: ["Git", "VS Code", "Figma", "Jest", "GraphQL", "REST APIs"]
   }
 ];
 
@@ -91,56 +91,31 @@ export const projects: Project[] = [
 export const experience: Experience[] = [
   {
     id: "1",
-    company: "TechFlow Inc.",
-    position: "Senior Full Stack Developer",
-    duration: "2022 - Present",
+    company: "Accenture",
+    position: "Advanced Application Engineering Analyst",
+    duration: "2018 - Present",
     description: [
-      "Led development of a microservices architecture serving 100K+ daily active users",
-      "Implemented CI/CD pipelines reducing deployment time by 75%",
-      "Mentored 4 junior developers and established code review best practices",
-      "Optimized database queries resulting in 40% performance improvement"
+      "Developed a RESTful API for a web application, improving scalability and reducing latency by 40%.",
+      "Refactored existing codebase, enhancing readability and maintainability, leading to a 30% reduction in development time.",
+      "Built a responsive web application using React, implementing code splitting and lazy loading, which improved page load times by 60% and increased mobile user retention by 25%.",
+      "Optimized database queries resulting in 40% performance improvement.",
+      "Implemented CI/CD pipelines, reducing deployment times by 50% and increasing deployment frequency by 3x.",
+      "Engineered a Node.js backend API, ensuring seamless data flow and smooth integration with the React frontend."
     ],
-    technologies: ["React", "Node.js", "AWS", "Docker", "PostgreSQL"]
-  },
-  {
-    id: "2",
-    company: "StartupXYZ",
-    position: "Full Stack Developer",
-    duration: "2020 - 2022",
-    description: [
-      "Built responsive web applications from concept to production",
-      "Collaborated with design team to implement pixel-perfect UI components",
-      "Integrated third-party APIs and payment systems (Stripe, PayPal)",
-      "Developed automated testing suite increasing code coverage to 90%"
-    ],
-    technologies: ["Vue.js", "Express", "MongoDB", "Jest", "Cypress"]
-  },
-  {
-    id: "3",
-    company: "Freelance",
-    position: "Web Developer",
-    duration: "2019 - 2020",
-    description: [
-      "Delivered 15+ custom websites for small businesses and startups",
-      "Specialized in e-commerce solutions and content management systems",
-      "Provided ongoing maintenance and performance optimization services",
-      "Achieved 98% client satisfaction rate and 100% project delivery on time"
-    ],
-    technologies: ["WordPress", "Shopify", "JavaScript", "PHP", "MySQL"]
+    technologies: ["React", "Node.js", "AWS", "PostgreSQL"]
   }
 ];
 
 export const education = [
   {
-    degree: "Bachelor of Science in Computer Science",
-    school: "University of California, Berkeley",
-    year: "2019",
-    details: "Graduated Magna Cum Laude, GPA: 3.8/4.0"
+    degree: "Bachelor of Technology",
+    school: "Vellore Institute of Technology, Vellore",
+    year: "2022",
+    details: "Graduated with CGPA: 8.48/10"
   }
 ];
 
 export const certifications = [
-  "AWS Certified Solutions Architect",
-  "Google Cloud Professional Developer",
-  "MongoDB Certified Developer"
+  "AWS Certified Developer Associate",
+  "MongoDB Certified SI Associate"
 ];

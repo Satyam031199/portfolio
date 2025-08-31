@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.6, ease: "easeOut" as const}
     }
   };
 
@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.5, ease: "easeOut" }
+      transition: { duration: 0.5, ease: "easeOut" as const }
     }
   };
 
@@ -81,7 +81,7 @@ const Hero: React.FC = () => {
           <motion.img
             src={personalInfo.avatar}
             alt={personalInfo.name}
-            className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white dark:border-gray-700 shadow-xl"
+            className="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white dark:border-gray-700 shadow-xl object-contain"
             whileHover={{ scale: 1.1, rotate: 5 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           />
