@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-navy-50 to-teal-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
+    <section id="home" className="min-h-screen mt-20 flex items-center justify-center bg-gradient-to-br from-navy-50 to-teal-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-30 dark:opacity-20">
         <motion.div 
