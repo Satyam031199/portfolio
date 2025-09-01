@@ -115,7 +115,7 @@ const Projects: React.FC = () => {
 
         {/* Projects Grid */}
         <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
@@ -142,18 +142,18 @@ const Projects: React.FC = () => {
                   <motion.img
                     src={project.imageUrl}
                     alt={project.title}
-                    className="w-full h-48 object-cover"
+                    className="w-full h-40 sm:h-48 object-cover"
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.3 }}
                   />
                   {project.featured && (
                     <motion.div 
-                      className="absolute top-4 right-4 bg-gold-500 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1"
+                      className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-gold-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium flex items-center gap-1"
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.3, type: "spring", stiffness: 500 }}
                     >
-                      <Star className="w-4 h-4" />
+                      <Star className="w-3 h-3 sm:w-4 sm:h-4" />
                       Featured
                     </motion.div>
                   )}
@@ -165,9 +165,9 @@ const Projects: React.FC = () => {
                 </div>
 
                 {/* Project Content */}
-                <div className="p-6">
+                <div className="p-4 sm:p-6">
                   <motion.h3 
-                    className="text-2xl font-bold text-gray-900 dark:text-white mb-3"
+                    className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -176,7 +176,7 @@ const Projects: React.FC = () => {
                     {project.title}
                   </motion.h3>
                   <motion.p 
-                    className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed"
+                    className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 leading-relaxed"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
@@ -187,7 +187,7 @@ const Projects: React.FC = () => {
 
                   {/* Tech Stack */}
                   <motion.div 
-                    className="flex flex-wrap gap-2 mb-6"
+                    className="flex flex-wrap gap-1 sm:gap-2 mb-4 sm:mb-6"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
@@ -196,7 +196,7 @@ const Projects: React.FC = () => {
                     {project.techStack.map((tech, techIndex) => (
                       <motion.span
                         key={techIndex}
-                        className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium"
+                        className="px-2 sm:px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-medium"
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
@@ -210,7 +210,7 @@ const Projects: React.FC = () => {
 
                   {/* Project Links */}
                   <motion.div 
-                    className="flex gap-4"
+                    className="flex flex-col sm:flex-row gap-2 sm:gap-4"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -220,7 +220,7 @@ const Projects: React.FC = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white rounded-lg font-medium"
+                      className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white rounded-lg font-medium text-sm sm:text-base"
                       whileHover={{ 
                         scale: 1.05,
                         backgroundColor: "#111827"
@@ -234,7 +234,7 @@ const Projects: React.FC = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-teal-600 text-white rounded-lg font-medium"
+                      className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-teal-600 text-white rounded-lg font-medium text-sm sm:text-base"
                       whileHover={{ 
                         scale: 1.05,
                         backgroundColor: "#0f766e"

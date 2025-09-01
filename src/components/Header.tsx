@@ -135,7 +135,7 @@ const Header: React.FC = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div 
-              className="md:hidden py-4 border-t border-gray-200 dark:border-gray-700 overflow-hidden"
+              className="md:hidden py-4 border-t border-gray-200 dark:border-gray-700 overflow-hidden bg-white dark:bg-gray-900"
               variants={mobileMenuVariants}
               initial="hidden"
               animate="visible"
@@ -145,7 +145,7 @@ const Header: React.FC = () => {
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left py-3 text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-200 font-medium"
+                  className="block w-full text-left py-3 px-4 text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium rounded-lg"
                   variants={mobileItemVariants}
                   whileHover={{ x: 10 }}
                 >

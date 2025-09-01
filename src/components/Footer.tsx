@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
         >
           <motion.button
             onClick={scrollToTop}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-teal-600 text-white font-semibold rounded-lg shadow-lg mb-8"
+            className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-teal-600 text-white font-semibold rounded-lg shadow-lg mb-6 sm:mb-8 text-sm sm:text-base"
             variants={itemVariants}
             whileHover={{ 
               scale: 1.05,
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
           </motion.button>
 
           <motion.div 
-            className="flex justify-center items-center gap-2 text-gray-400 mb-4"
+            className="flex flex-wrap justify-center items-center gap-2 text-gray-400 mb-4 text-sm sm:text-base px-4"
             variants={itemVariants}
           >
             <span>Built with</span>
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
           </motion.div>
 
           <motion.p 
-            className="text-gray-500"
+            className="text-gray-500 text-sm sm:text-base px-4"
             variants={itemVariants}
           >
             © {currentYear} {personalInfo.name}. All rights reserved.

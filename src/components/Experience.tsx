@@ -49,7 +49,7 @@ const Experience: React.FC = () => {
           variants={containerVariants}
         >
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
             variants={itemVariants}
           >
             Experience & Education
@@ -64,7 +64,7 @@ const Experience: React.FC = () => {
           />
           <motion.button
             onClick={handleDownloadResume}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-teal-600 text-white font-semibold rounded-lg shadow-lg"
+            className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-teal-600 text-white font-semibold rounded-lg shadow-lg text-sm sm:text-base"
             variants={itemVariants}
             whileHover={{ 
               scale: 1.05,
@@ -78,7 +78,7 @@ const Experience: React.FC = () => {
           </motion.button>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Work Experience */}
           <motion.div 
             className="lg:col-span-2"
@@ -88,17 +88,17 @@ const Experience: React.FC = () => {
             variants={containerVariants}
           >
             <motion.h3 
-              className="text-3xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-2"
+              className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 flex items-center gap-2"
               variants={itemVariants}
             >
-              <Calendar className="w-8 h-8 text-teal-600" />
+              <Calendar className="w-6 h-6 sm:w-8 sm:h-8 text-teal-600" />
               Work Experience
             </motion.h3>
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               {experience.map((exp) => (
                 <motion.div
                   key={exp.id}
-                  className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl"
+                  className="bg-gray-50 dark:bg-gray-800 p-4 sm:p-6 rounded-xl"
                   variants={cardVariants}
                   whileHover={{ 
                     scale: 1.02,
@@ -106,34 +106,34 @@ const Experience: React.FC = () => {
                   }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-2">
                     <div>
                       <h4 className="text-xl font-bold text-gray-900 dark:text-white">
                         {exp.position}
                       </h4>
-                      <p className="text-lg text-teal-600 dark:text-teal-400 font-medium">
+                      <p className="text-base sm:text-lg text-teal-600 dark:text-teal-400 font-medium">
                         {exp.company}
                       </p>
                     </div>
-                    <span className="text-gray-500 dark:text-gray-400 font-medium mt-2 sm:mt-0">
+                    <span className="text-sm sm:text-base text-gray-500 dark:text-gray-400 font-medium">
                       {exp.duration}
                     </span>
                   </div>
 
                   <ul className="space-y-2 mb-4">
                     {exp.description.map((item, index) => (
-                      <li key={index} className="text-gray-600 dark:text-gray-300 flex items-start">
+                      <li key={index} className="text-sm sm:text-base text-gray-600 dark:text-gray-300 flex items-start">
                         <span className="w-2 h-2 bg-teal-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                         {item}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1 sm:gap-2">
                     {exp.technologies.map((tech, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium"
+                        className="px-2 sm:px-3 py-1 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-medium"
                       >
                         {tech}
                       </span>
@@ -152,9 +152,9 @@ const Experience: React.FC = () => {
             variants={containerVariants}
           >
             {/* Education */}
-            <motion.div className="mb-12" variants={itemVariants}>
+            <motion.div className="mb-8 lg:mb-12" variants={itemVariants}>
               <motion.h3 
-                className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2"
+                className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 flex items-center gap-2"
                 variants={itemVariants}
               >
                 <MapPin className="w-6 h-6 text-teal-600" />
@@ -163,7 +163,7 @@ const Experience: React.FC = () => {
               {education.map((edu, index) => (
                 <motion.div
                   key={index}
-                  className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl"
+                  className="bg-gray-50 dark:bg-gray-800 p-4 sm:p-6 rounded-xl"
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -173,16 +173,16 @@ const Experience: React.FC = () => {
                     boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
                   }}
                 >
-                  <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                  <h4 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white mb-2">
                     {edu.degree}
                   </h4>
-                  <p className="text-teal-600 dark:text-teal-400 font-medium mb-2">
+                  <p className="text-sm sm:text-base text-teal-600 dark:text-teal-400 font-medium mb-2">
                     {edu.school}
                   </p>
-                  <p className="text-gray-500 dark:text-gray-400 mb-2">
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
                     {edu.year}
                   </p>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">
                     {edu.details}
                   </p>
                 </motion.div>
@@ -192,7 +192,7 @@ const Experience: React.FC = () => {
             {/* Certifications */}
             <motion.div variants={itemVariants}>
               <motion.h3 
-                className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2"
+                className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 flex items-center gap-2"
                 variants={itemVariants}
               >
                 <Award className="w-6 h-6 text-teal-600" />
@@ -202,7 +202,7 @@ const Experience: React.FC = () => {
                 {certifications.map((cert, index) => (
                   <motion.div
                     key={index}
-                    className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg"
+                    className="bg-gray-50 dark:bg-gray-800 p-3 sm:p-4 rounded-lg"
                     initial={{ opacity: 0, x: 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -212,7 +212,7 @@ const Experience: React.FC = () => {
                       x: 5
                     }}
                   >
-                    <p className="text-gray-900 dark:text-white font-medium">
+                    <p className="text-sm sm:text-base text-gray-900 dark:text-white font-medium">
                       {cert}
                     </p>
                   </motion.div>

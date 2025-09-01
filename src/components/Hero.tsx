@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
       </div>
 
       <motion.div 
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -81,24 +81,24 @@ const Hero: React.FC = () => {
           <motion.img
             src={personalInfo.avatar}
             alt={personalInfo.name}
-            className="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-white dark:border-gray-700 shadow-xl object-contain"
+            className="w-32 h-32 sm:w-40 sm:h-40 rounded-full mx-auto mb-6 border-4 border-white dark:border-gray-700 shadow-xl object-cover"
             whileHover={{ scale: 1.1, rotate: 5 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           />
           <motion.h1 
-            className="text-3xl md:text-5xl text-gray-900 dark:text-white mb-4 leading-tight"
+            className="text-2xl sm:text-3xl md:text-5xl text-gray-900 dark:text-white mb-4 leading-tight px-4"
             variants={itemVariants}
           >
-            Hi, I'm <span className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-500 via-blue-600 to-navy-600 dark:from-blue-400 dark:via-blue-500 dark:to-navy-500 bg-clip-text text-transparent">{personalInfo.name}</span>
+            Hi, I'm <span className="text-3xl sm:text-4xl md:text-7xl font-bold bg-gradient-to-r from-blue-500 via-blue-600 to-navy-600 dark:from-blue-400 dark:via-blue-500 dark:to-navy-500 bg-clip-text text-transparent block sm:inline">{personalInfo.name}</span>
           </motion.h1>
           <motion.p 
-            className="text-2xl md:text-3xl text-teal-600 dark:text-teal-400 font-medium mb-6"
+            className="text-lg sm:text-xl md:text-3xl text-teal-600 dark:text-teal-400 font-medium mb-6 px-4"
             variants={itemVariants}
           >
             {personalInfo.role}
           </motion.p>
           <motion.p 
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed px-4"
             variants={itemVariants}
           >
             {personalInfo.tagline}
@@ -107,7 +107,7 @@ const Hero: React.FC = () => {
 
         {/* Social Links */}
         <motion.div 
-          className="flex justify-center space-x-6 mb-12"
+          className="flex justify-center space-x-4 sm:space-x-6 mb-12 px-4"
           variants={itemVariants}
         >
           {[
@@ -120,7 +120,7 @@ const Hero: React.FC = () => {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg group"
+              className="p-2 sm:p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg group"
               variants={socialVariants}
               whileHover={{ 
                 scale: 1.15, 
@@ -129,19 +129,19 @@ const Hero: React.FC = () => {
               }}
               whileTap={{ scale: 0.95 }}
             >
-              <social.icon className="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-navy-600 dark:group-hover:text-teal-400" />
+              <social.icon className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300 group-hover:text-navy-600 dark:group-hover:text-teal-400" />
             </motion.a>
           ))}
         </motion.div>
 
         {/* CTA Buttons */}
         <motion.div 
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+          className="flex flex-col sm:flex-row gap-4 justify-center mb-12 px-4"
           variants={itemVariants}
         >
           <motion.button
             onClick={() => scrollToSection('projects')}
-            className="px-8 py-4 bg-navy-600 text-white font-semibold rounded-lg shadow-lg"
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-navy-600 text-white font-semibold rounded-lg shadow-lg text-sm sm:text-base"
             whileHover={{ 
               scale: 1.05,
               backgroundColor: "#1e3a8a",
@@ -154,7 +154,7 @@ const Hero: React.FC = () => {
           </motion.button>
           <motion.button
             onClick={() => scrollToSection('contact')}
-            className="px-8 py-4 bg-transparent border-2 border-navy-600 text-navy-600 dark:border-teal-400 dark:text-teal-400 font-semibold rounded-lg"
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-navy-600 text-navy-600 dark:border-teal-400 dark:text-teal-400 font-semibold rounded-lg text-sm sm:text-base"
             whileHover={{ 
               scale: 1.05,
               backgroundColor: "#1e40af",

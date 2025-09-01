@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
           variants={containerVariants}
         >
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
             variants={itemVariants}
           >
             Let's Work Together
@@ -100,14 +100,14 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
           />
           <motion.p 
-            className="text-xl text-gray-300 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4"
             variants={itemVariants}
           >
             Have a project in mind? I'd love to hear about it. Let's discuss how we can bring your ideas to life.
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
           <motion.div
             initial="hidden"
@@ -116,12 +116,12 @@ const Contact: React.FC = () => {
             variants={containerVariants}
           >
             <motion.h3 
-              className="text-3xl font-bold mb-8"
+              className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8"
               variants={itemVariants}
             >
               Get In Touch
             </motion.h3>
-            <motion.div className="space-y-6 mb-8" variants={containerVariants}>
+            <motion.div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8" variants={containerVariants}>
               <motion.div 
                 className="flex items-center gap-4"
                 variants={itemVariants}
@@ -129,17 +129,17 @@ const Contact: React.FC = () => {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <motion.div 
-                  className="p-3 bg-teal-600 rounded-lg"
+                  className="p-2 sm:p-3 bg-teal-600 rounded-lg flex-shrink-0"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Mail className="w-6 h-6" />
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
                 </motion.div>
                 <div>
-                  <p className="font-medium text-gray-300">Email</p>
+                  <p className="font-medium text-gray-300 text-sm sm:text-base">Email</p>
                   <a 
                     href={`mailto:${personalInfo.email}`}
-                    className="text-lg hover:text-teal-400 transition-colors duration-200"
+                    className="text-sm sm:text-base lg:text-lg hover:text-teal-400 transition-colors duration-200 break-all"
                   >
                     {personalInfo.email}
                   </a>
@@ -153,17 +153,17 @@ const Contact: React.FC = () => {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <motion.div 
-                  className="p-3 bg-teal-600 rounded-lg"
+                  className="p-2 sm:p-3 bg-teal-600 rounded-lg flex-shrink-0"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Phone className="w-6 h-6" />
+                  <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
                 </motion.div>
                 <div>
-                  <p className="font-medium text-gray-300">Phone</p>
+                  <p className="font-medium text-gray-300 text-sm sm:text-base">Phone</p>
                   <a 
                     href={`tel:${personalInfo.phone}`}
-                    className="text-lg hover:text-teal-400 transition-colors duration-200"
+                    className="text-sm sm:text-base lg:text-lg hover:text-teal-400 transition-colors duration-200"
                   >
                     {personalInfo.phone}
                   </a>
@@ -177,15 +177,15 @@ const Contact: React.FC = () => {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <motion.div 
-                  className="p-3 bg-teal-600 rounded-lg"
+                  className="p-2 sm:p-3 bg-teal-600 rounded-lg flex-shrink-0"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <MapPin className="w-6 h-6" />
+                  <MapPin className="w-5 h-5 sm:w-6 sm:h-6" />
                 </motion.div>
                 <div>
-                  <p className="font-medium text-gray-300">Location</p>
-                  <p className="text-lg">{personalInfo.location}</p>
+                  <p className="font-medium text-gray-300 text-sm sm:text-base">Location</p>
+                  <p className="text-sm sm:text-base lg:text-lg">{personalInfo.location}</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -193,13 +193,13 @@ const Contact: React.FC = () => {
             {/* Social Links */}
             <motion.div variants={itemVariants}>
               <motion.h4 
-                className="text-xl font-bold mb-4"
+                className="text-lg sm:text-xl font-bold mb-4"
                 variants={itemVariants}
               >
                 Follow Me
               </motion.h4>
               <motion.div 
-                className="flex gap-4"
+                className="flex gap-3 sm:gap-4"
                 variants={containerVariants}
               >
                 {socialLinks.map((social, index) => (
@@ -208,7 +208,7 @@ const Contact: React.FC = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-gray-800 rounded-lg group"
+                    className="p-2 sm:p-3 bg-gray-800 rounded-lg group"
                     aria-label={social.label}
                     variants={itemVariants}
                     whileHover={{ 
@@ -218,7 +218,7 @@ const Contact: React.FC = () => {
                     }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <social.icon className="w-6 h-6" />
+                    <social.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                   </motion.a>
                 ))}
               </motion.div>
@@ -233,17 +233,17 @@ const Contact: React.FC = () => {
             variants={formVariants}
           >
             <motion.h3 
-              className="text-3xl font-bold mb-8"
+              className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8"
               variants={itemVariants}
             >
               Send a Message
             </motion.h3>
             <motion.form 
               onSubmit={handleSubmit} 
-              className="space-y-6"
+              className="space-y-4 sm:space-y-6"
               variants={containerVariants}
             >
-              <div className="grid sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <motion.div variants={itemVariants}>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                     Your Name
@@ -288,7 +288,7 @@ const Contact: React.FC = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   required
-                  rows={6}
+                  rows={4}
                   className="input resize-none"
                   placeholder="Tell me about your project..."
                   whileFocus={{ scale: 1.02 }}
@@ -298,7 +298,7 @@ const Contact: React.FC = () => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-teal-600 disabled:bg-gray-600 text-white font-semibold rounded-lg shadow-lg disabled:cursor-not-allowed"
+                className="w-full flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-4 bg-teal-600 disabled:bg-gray-600 text-white font-semibold rounded-lg shadow-lg disabled:cursor-not-allowed text-sm sm:text-base"
                 variants={itemVariants}
                 whileHover={!isSubmitting ? { 
                   scale: 1.02,
