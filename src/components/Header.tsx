@@ -117,7 +117,7 @@ const Header: React.FC = () => {
               whileHover={{ scale: 1.1, rotate: 180 }}
               whileTap={{ scale: 0.9 }}
             >
-              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {isDark ? <Sun className="w-5 h-5" color="white"/> : <Moon className="w-5 h-5" />}
             </motion.button>
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
