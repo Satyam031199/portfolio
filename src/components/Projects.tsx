@@ -9,7 +9,7 @@ const Projects: React.FC = () => {
   const filteredProjects = filter === 'featured' 
     ? projects.filter(project => project.featured)
     : projects;
-
+  console.log(filteredProjects);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -40,6 +40,7 @@ const Projects: React.FC = () => {
     exit: {
       opacity: 0,
       scale: 0.9,
+      y: 20,
       transition: { duration: 0.3 }
     }
   };
@@ -126,6 +127,9 @@ const Projects: React.FC = () => {
                 key={project.id}
                 className="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden group"
                 variants={cardVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
                 layout
                 whileHover={{ 
                   scale: 1.05,

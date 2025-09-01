@@ -86,10 +86,10 @@ const Hero: React.FC = () => {
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           />
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-4 leading-tight"
+            className="text-3xl md:text-5xl text-gray-900 dark:text-white mb-4 leading-tight"
             variants={itemVariants}
           >
-            {personalInfo.name}
+            Hi, I'm <span className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-500 via-blue-600 to-navy-600 dark:from-blue-400 dark:via-blue-500 dark:to-navy-500 bg-clip-text text-transparent">{personalInfo.name}</span>
           </motion.h1>
           <motion.p 
             className="text-2xl md:text-3xl text-teal-600 dark:text-teal-400 font-medium mb-6"

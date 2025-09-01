@@ -8,6 +8,7 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { Toaster } from 'react-hot-toast';
 
 const AppContent: React.FC = () => {
   const { trackEvent } = useAnalytics();
@@ -37,6 +38,7 @@ const AppContent: React.FC = () => {
 function App() {
   return (
     <ThemeProvider>
+      <Toaster position='bottom-right'/>
       <AppContent />
     </ThemeProvider>
   );

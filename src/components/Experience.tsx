@@ -25,7 +25,7 @@ const Experience: React.FC = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.6, ease: "easeOut" as const}
     }
   };
 
@@ -34,7 +34,7 @@ const Experience: React.FC = () => {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.5, ease: "easeOut" }
+      transition: { duration: 0.5, ease: "easeOut" as const}
     }
   };
 
@@ -95,7 +95,7 @@ const Experience: React.FC = () => {
               Work Experience
             </motion.h3>
             <div className="space-y-8">
-              {experience.map((exp, index) => (
+              {experience.map((exp) => (
                 <motion.div
                   key={exp.id}
                   className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl"

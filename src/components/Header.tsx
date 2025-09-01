@@ -102,9 +102,9 @@ const Header: React.FC = () => {
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               aria-label="Toggle theme"
               whileHover={{ scale: 1.1, rotate: 180 }}
-              whileTap={{ scale: 0.9 }}
+              whileTap={{ scale: 0.9 }} 
             >
-              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {isDark ? <Sun className="w-5 h-5" color='white' /> : <Moon className="w-5 h-5"/>}
             </motion.button>
           </div>
 

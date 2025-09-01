@@ -1,4 +1,4 @@
-import { Project, Experience, Skill } from '../types';
+import { Project, Experience } from '../types';
 
 export const personalInfo = {
   name: "Satyam Chaturvedi",
@@ -10,81 +10,92 @@ export const personalInfo = {
   avatar: "/avatar.jpeg",
   resumeUrl: "/resume.pdf",
   social: {
-    linkedin: "linkedin.com/in/satyam-chaturvedi-031199",
-    github: "linkedin.com/in/satyam-chaturvedi-031199",
+    linkedin: "https://linkedin.com/in/satyam-chaturvedi-031199",
+    github: "https://github.com/Satyam031199",
     twitter: ""
   }
 };
 
-export const aboutMe = `I'm a passionate full-stack developer with 3+ years of experience creating innovative web applications. I specialize in React, Node.js, and modern JavaScript frameworks, with a strong focus on user experience and performance optimization.
+export const aboutMe = `I'm a passionate full-stack developer with 3+ years of experience creating innovative web applications. I specialize in React, Node.js, and modern JavaScript frameworks, with a strong focus on user experience and performance optimization. I believe in writing clean, readable, maintainable code and staying up to date with the latest technologies.
 
-My journey in tech started with Electrical and Electronics degree from VIT Vellore, and I've since worked with startups and established companies to build scalable solutions that impact thousands of users daily. I'm particularly excited about the intersection of AI and web development, constantly exploring new ways to enhance user experiences through intelligent applications.
+My journey in tech started with Electrical and Electronics degree from VIT Vellore. I'm particularly excited about the intersection of AI and web development, constantly exploring new ways to enhance user experiences through intelligent applications.
 
-When I'm not coding, you'll find me contributing to open-source projects, mentoring junior developers, or exploring the beautiful hiking trails around the Bay Area.`;
+When I'm not coding, you'll find me contributing to open-source projects, mentoring junior developers and playing football.`;
 
-export const skills: Skill[] = [
+export const skillCategories = [
   {
-    category: "Frontend",
-    items: ["React", "TypeScript", "Next.js", "Vue.js", "Tailwind CSS", "HTML5", "CSS3"]
+    title: "Frontend",
+    skills: [
+      { name: "React", icon: "/icons/react.png" },
+      { name: "TypeScript", icon: "/icons/typescript.png" },
+      { name: "Tailwind CSS", icon: "/icons/tailwindcss.png" },
+      { name: "Next.js", icon: "/icons/nextjs.png" },
+    ],
   },
   {
-    category: "Backend",
-    items: ["NextJs","Node.js", "Express", "PostgreSQL", "MongoDB", "Redis"]
+    title: "Backend",
+    skills: [
+      { name: "Node.js", icon: "/icons/nodejs.png" },
+      { name: "Express.js", icon: "/icons/express.png" },
+      { name: "MongoDB", icon: "/icons/mongodb.png" },
+      { name: "PostgreSQL", icon: "/icons/postgresql.png" },
+    ],
   },
   {
-    category: "Cloud & DevOps",
-    items: ["AWS", "Docker", "Kubernetes", "CI/CD", "Terraform"]
+    title: "Tools & Technologies",
+    skills: [
+      { name: "Git & GitHub", icon: "/icons/github.png" },
+      { name: "Docker", icon: "/icons/docker.png" },
+      { name: "AWS", icon: "/icons/aws.png" },
+      { name: "Kubernetes", icon: "/icons/k8s.png" },
+      { name: "Terraform", icon: "/icons/terraform.png" },
+      { name: "Jenkins", icon: "/icons/jenkins.png" },
+    ],
   },
   {
-    category: "Tools & Other",
-    items: ["Git", "VS Code", "Figma", "Jest", "GraphQL", "REST APIs"]
-  }
+    title: "Curretly Learning",
+    skills: [
+      { name: "GraphQL", icon: "/icons/graphql.png" },
+      { name: "Prometheus", icon: "/icons/prometheus.png" },
+      { name: "Ansible", icon: "/icons/ansible.png" },
+      { name: "React Native", icon: "/icons/react.png" },
+    ],
+  },
 ];
 
 export const projects: Project[] = [
   {
     id: "1",
-    title: "TaskFlow Pro",
-    description: "A collaborative project management platform with real-time updates",
-    longDescription: "Built a comprehensive project management solution that enables teams to collaborate seamlessly with real-time updates, kanban boards, and advanced reporting features. The platform supports file sharing, time tracking, and integrates with popular tools like Slack and GitHub.",
-    techStack: ["React", "Node.js", "Socket.io", "PostgreSQL", "AWS"],
-    imageUrl: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800",
-    githubUrl: "https://github.com/alexrivera/taskflow-pro",
-    liveUrl: "https://taskflow-pro.vercel.app",
+    title: "Store-It",
+    description: "Storage based solution like google drive",
+    longDescription: "Storage based solution like google drive made using NextJs application made with using Appwrite for storage, authentication and database, shadcn for UI and react-hook-form with zod for forms.",
+    techStack: ["NextJs", "Zod", "Typescript", "Appwrite", "Shadcn", "React-Hook-Form"],
+    imageUrl: "/images/store-it.png",
+    githubUrl: "https://github.com/Satyam031199/store-it",
+    liveUrl: "https://store-it.satyamcodes.xyz/sign-in",
     featured: true
   },
   {
     id: "2",
-    title: "EcoTracker",
-    description: "Mobile app for tracking personal carbon footprint with AI insights",
-    longDescription: "Developed a React Native application that helps users track their daily carbon footprint through smart categorization and AI-powered insights. Features include habit tracking, community challenges, and personalized reduction recommendations.",
-    techStack: ["React Native", "TypeScript", "Firebase", "TensorFlow.js"],
-    imageUrl: "https://images.pexels.com/photos/3184432/pexels-photo-3184432.jpeg?auto=compress&cs=tinysrgb&w=800",
-    githubUrl: "https://github.com/alexrivera/ecotracker",
-    liveUrl: "https://ecotracker.app",
-    featured: true
+    title: "Idea Vault",
+    description: "Idea Vault is a platform for storing and sharing ideas",
+    longDescription: "A NextJs application made by Next-Auth using Github Provider for authentication, Shadcn, Sanity as CMS, Sentry for performance and error handling, Zod for form validations and using nextJs latest PPR rendering for showing dynamic and static content on same page",
+    techStack: ["NextJs", "Typescript", "Sanity", "Shadcn", "Next-Auth"],
+    imageUrl: "/images/idea-vault.png",
+    githubUrl: "https://github.com/Satyam031199/idea-vault",
+    liveUrl: "https://ideavault-startup.vercel.app/",
+    featured: false
   },
   {
     id: "3",
-    title: "DataViz Dashboard",
-    description: "Interactive analytics dashboard for e-commerce businesses",
-    longDescription: "Created a powerful analytics dashboard that provides e-commerce businesses with actionable insights through beautiful data visualizations. Features real-time metrics, custom reporting, and automated insights generation.",
-    techStack: ["Vue.js", "D3.js", "Python", "FastAPI", "PostgreSQL"],
-    imageUrl: "https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800",
-    githubUrl: "https://github.com/alexrivera/dataviz-dashboard",
-    liveUrl: "https://dataviz-demo.netlify.app",
+    title: "Converso",
+    description: "Your AI learning companion",
+    longDescription: "SaaS app featuring user authentication, subscriptions and payments using Next.js, Clerk and Supabase. Integrates Vapi AI voice agent for seamless, interactive learning sessions.",
+    techStack: ["NextJs", "Zod", "Supabase", "Vapi", "Sentry", "Clerk", "Shadcn"],
+    imageUrl: "/images/converso.png",
+    githubUrl: "https://github.com/Satyam031199/converso",
+    liveUrl: "https://converso.satyamcodes.xyz/",
     featured: true
-  },
-  {
-    id: "4",
-    title: "Recipe AI",
-    description: "AI-powered recipe generator based on available ingredients",
-    longDescription: "Built an intelligent recipe suggestion platform that analyzes available ingredients and dietary preferences to generate personalized recipes. Includes nutritional analysis, shopping list generation, and meal planning features.",
-    techStack: ["Next.js", "OpenAI API", "Prisma", "Supabase"],
-    imageUrl: "https://images.pexels.com/photos/3184394/pexels-photo-3184394.jpeg?auto=compress&cs=tinysrgb&w=800",
-    githubUrl: "https://github.com/alexrivera/recipe-ai",
-    liveUrl: "https://recipe-ai.vercel.app",
-    featured: false
   }
 ];
 

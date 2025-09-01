@@ -3,16 +3,15 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 import { ContactForm } from '../types';
+import toast from 'react-hot-toast';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState<ContactForm>({
-    name: '',
+    fullName: '',
     email: '',
-    subject: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -22,17 +21,22 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      const response = await fetch(import.meta.env.VITE_AWS_LAMBDA_MAIL_TRIGGER!, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if(!response.ok) {
+        throw new Error('Failed to send email');
+      }
+      toast.success('Email sent successfully');
+      setFormData({ fullName: '', email: '', message: '' });
     } catch (error) {
-      setSubmitStatus('error');
+      console.log(error);
+      toast.error('Failed to send email');
     } finally {
       setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus('idle'), 3000);
     }
   };
 
@@ -247,8 +251,8 @@ const Contact: React.FC = () => {
                   <motion.input
                     type="text"
                     id="name"
-                    name="name"
-                    value={formData.name}
+                    name="fullName"
+                    value={formData.fullName}
                     onChange={handleInputChange}
                     required
                     className="input"
@@ -273,23 +277,6 @@ const Contact: React.FC = () => {
                   />
                 </motion.div>
               </div>
-
-              <motion.div variants={itemVariants}>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-                  Subject
-                </label>
-                <motion.input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  required
-                  className="input"
-                  placeholder="Let's discuss a project"
-                  whileFocus={{ scale: 1.02 }}
-                />
-              </motion.div>
 
               <motion.div variants={itemVariants}>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
@@ -336,30 +323,6 @@ const Contact: React.FC = () => {
                   </>
                 )}
               </motion.button>
-
-              {/* Status Messages */}
-              {submitStatus === 'success' && (
-                <motion.div 
-                  className="p-4 bg-green-600 rounded-lg"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                >
-                  <p className="text-white font-medium">Thank you! Your message has been sent successfully.</p>
-                </motion.div>
-              )}
-              {submitStatus === 'error' && (
-                <motion.div 
-                  className="p-4 bg-red-600 rounded-lg"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                >
-                  <p className="text-white font-medium">Sorry, there was an error sending your message. Please try again.</p>
-                </motion.div>
-              )}
             </motion.form>
           </motion.div>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code, Globe, Zap } from 'lucide-react';
-import { aboutMe, skills } from '../data/portfolio';
+import { aboutMe, skillCategories } from '../data/portfolio';
 
 const About: React.FC = () => {
   const containerVariants = {
@@ -164,43 +164,51 @@ const About: React.FC = () => {
             Technical Skills
           </motion.h3>
           <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid md:grid-cols-1 lg:grid-cols-4 gap-8"
             variants={containerVariants}
           >
-            {skills.map((skillGroup, index) => (
-              <motion.div
-                key={index}
-                className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl"
-                variants={itemVariants}
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            {skillCategories.map((category, categoryIndex) => (
+            <div
+              key={category.title}
+              className={`backdrop-blur-sm bg-white/30 dark:bg-white/5 p-8 rounded-2xl border border-white/20 dark:border-white/10 shadow-xl animate-fade-in`}
+              style={{ animationDelay: `${categoryIndex * 200}ms` }}
+            >
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-6 text-center">
+                {category.title}
+              </h3>
+
+              <div
+                className={`grid ${
+                  categoryIndex === 2 ? "grid-cols-3" : "grid-cols-2"
+                } gap-4`}
               >
-                <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                  {skillGroup.category}
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {skillGroup.items.map((skill, skillIndex) => (
-                    <motion.span
-                      key={skillIndex}
-                      className="px-3 py-1 bg-teal-100 dark:bg-teal-900/30 text-teal-800 dark:text-teal-300 rounded-full text-sm font-medium"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: skillIndex * 0.1 }}
-                      whileHover={{ 
-                        scale: 1.1,
-                        backgroundColor: "#99f6e4"
+                {category.skills.map((skill, skillIndex) => {
+                  return (
+                    <div
+                      key={skill.name}
+                      className="backdrop-blur-sm bg-white/40 dark:bg-white/10 p-4 rounded-xl border border-white/30 dark:border-white/20 hover:bg-white/50 dark:hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                      style={{
+                        animationDelay: `${
+                          categoryIndex * 200 + skillIndex * 100
+                        }ms`,
                       }}
                     >
-                      {skill}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
+                      <div className="flex flex-col items-center text-center space-y-2">
+                        <div
+                          className={`w-10 h-10 rounded-lg bg-gradient-to-r flex items-center justify-center`}
+                        >
+                          <img src={skill.icon} alt={skill.name} />
+                        </div>
+                        <span className="text-gray-700 dark:text-gray-300 font-medium text-sm">
+                          {skill.name}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
           </motion.div>
         </motion.div>
       </div>

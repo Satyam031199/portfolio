@@ -20,13 +20,17 @@ export interface Experience {
 }
 
 export interface Skill {
-  category: string;
-  items: string[];
+  name: string;
+  icon: string;
+}
+
+export interface SkillCategory {
+  title: string;
+  skills: Skill[];
 }
 
 export interface ContactForm {
-  name: string;
+  fullName: string;
   email: string;
-  subject: string;
   message: string;
 }
