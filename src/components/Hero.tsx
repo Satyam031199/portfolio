@@ -81,7 +81,7 @@ const Hero: React.FC = () => {
           <motion.img
             src={personalInfo.avatar}
             alt={personalInfo.name}
-            className="w-32 h-32 sm:w-40 sm:h-40 rounded-full mx-auto mb-6 border-4 border-white dark:border-gray-700 shadow-xl object-cover"
+            className="w-32 h-32 sm:w-40 sm:h-40 rounded-full mx-auto mb-6 border-4 border-white dark:border-gray-700 shadow-xl object-contain"
             whileHover={{ scale: 1.1, rotate: 5 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           />
