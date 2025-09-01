@@ -126,7 +126,7 @@ const Header: React.FC = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" color="white"/>}
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" color={isDark ? "white" : "black"}/>}
             </motion.button>
           </div>
         </div>
