@@ -66,6 +66,17 @@ export const skillCategories = [
 export const projects: Project[] = [
   {
     id: "1",
+    title: "Kanban Board",
+    description: "Production Workflow Management",
+    longDescription: "SaaS app featuring user authentication and Kanban Board functionalities along with analytics dashboard.",
+    techStack: ["Vite", "Supabase", "RadixUI"],
+    imageUrl: "/images/kanban-board.png",
+    githubUrl: "https://github.com/Satyam031199/kanban-board",
+    liveUrl: "https://kanban-board.satyamcodes.xyz",
+    featured: true
+  },
+  {
+    id: "2",
     title: "Store-It",
     description: "Storage based solution like google drive",
     longDescription: "Storage based solution like google drive made using NextJs application made with using Appwrite for storage, authentication and database, shadcn for UI and react-hook-form with zod for forms.",
@@ -76,7 +87,7 @@ export const projects: Project[] = [
     featured: true
   },
   {
-    id: "2",
+    id: "3",
     title: "Idea Vault",
     description: "Idea Vault is a platform for storing and sharing ideas",
     longDescription: "A NextJs application made by Next-Auth using Github Provider for authentication, Shadcn, Sanity as CMS, Sentry for performance and error handling, Zod for form validations and using nextJs latest PPR rendering for showing dynamic and static content on same page",
@@ -87,7 +98,7 @@ export const projects: Project[] = [
     featured: false
   },
   {
-    id: "3",
+    id: "4",
     title: "Converso",
     description: "Your AI learning companion",
     longDescription: "SaaS app featuring user authentication, subscriptions and payments using Next.js, Clerk and Supabase. Integrates Vapi AI voice agent for seamless, interactive learning sessions.",
