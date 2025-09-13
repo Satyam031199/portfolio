@@ -68,7 +68,7 @@ export const projects: Project[] = [
     id: "1",
     title: "Kanban Board",
     description: "Production Workflow Management",
-    longDescription: "SaaS app made with Vite and Supabase featuring user authentication and Kanban Board functionalities like filtering, searching, Drag and Drop feature along with analytics dashboard.",
+    longDescription: "SaaS app made with Vite and Supabase featuring user authentication and Kanban Board functionalities like filtering, searching, dark mode, Drag and Drop feature along with analytics dashboard.",
     techStack: ["Vite", "Supabase", "RadixUI"],
     imageUrl: "/images/kanban-board.png",
     githubUrl: "https://github.com/Satyam031199/kanban-board",
